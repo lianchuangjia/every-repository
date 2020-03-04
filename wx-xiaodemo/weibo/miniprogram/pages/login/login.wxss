@@ -1,0 +1,28 @@
+/* miniprogram/pages/login/login.wxss */
+.container{
+    padding: 0 40rpx;
+    
+}
+.container .login-group{
+    margin-top: 100rpx;
+    text-align: center;
+}
+.login-group .logo{
+    width: 300rpx;
+    height: 300rpx;
+   
+}
+.tips{
+    font-size: 32rpx;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    color: #656565;
+    text-align: center;
+}
+.container button{
+    width: 100%;
+    margin-bottom: 20rpx;
+}
+.fh-btn{
+       box-shadow: 0 0 1px #656565;
+}

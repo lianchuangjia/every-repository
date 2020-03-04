@@ -1,0 +1,12 @@
+<navigator wx:if='{{item}}' class='item-navigator' 
+ url='{{itemurl}}'>
+  <view class='item-group'>
+      <view class='thumbnail-group'>
+        <image class='thumbnail' src='{{item.cover.url}}'></image>
+      </view>
+      <view class='item-title'>{{item.title}}</view>
+      <starts rate="{{item.rating.value}}" starsize="20"       fontsize='20'fontcolor='#ccc'></starts>
+  </view>
+</navigator> 
+
+<view class='item-navigator' wx:else></view>   

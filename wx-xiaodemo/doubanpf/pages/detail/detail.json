@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "starts":"/components/starts/starts",
+    "onecomment":"/components/onecomment/onecomment"
+  }
+}

@@ -1,0 +1,7 @@
+<!-- 搜索页面 -->
+<searchbar isnavigator='{{true}}'></searchbar>
+
+<view class='container'>
+   <itemview  itemurl='/pages/detail/detail?type={{type}}&id={{item.id}} ' wx:for='{{items}}' wx:key='{{item.title}}' item='{{item}}'></itemview>
+</view>
+

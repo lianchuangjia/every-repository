@@ -1,0 +1,8 @@
+<view class="container">
+    <view class="login-group">
+        <image class="logo" src="cloud://yunkaifa-131-huanji-m46hd.7975-yunkaifa-131-huanji-m46hd-1300696781/weibo/timgG9R2GI8E.jpg"></image>
+    </view>
+    <view class="tips">授权后，才能使用后续功能~</view>
+    <button type="primary" open-type="getUserInfo" bind:getuserinfo="onGetUserInfoTap">授权</button>
+    <button class="fh-btn" type="default" bind:tap="fhEvent" >返回</button>
+</view>

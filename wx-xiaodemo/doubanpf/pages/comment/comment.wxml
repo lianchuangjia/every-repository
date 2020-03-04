@@ -1,0 +1,22 @@
+<view class='container'>
+<!-- 头部 -->
+   <view class='item-group' bindtap='onbackEvent'>
+      <image class='thumbnail' src='{{thumbnail}}'></image>
+      <text class='item-title'>{{title}}</text>
+      <text class='item-rate'>{{rate}}分</text>
+   </view>
+  <!-- 影评 -->
+      <text class='comment-title'>全部影评（{{total}}）</text>
+      <!-- <onecomment wx:for='{{comments}}' item='item'></onecomment> -->
+ <onecomment wx:key='{{item.id}}'  wx:for='{{comments}}' item='{{item}}'></onecomment>
+
+<!-- 按钮 -->
+<view class='page-btn-group'>
+   <button class='page-btn' bindtap='onPrePageTap'
+   disabled='{{start<=1}}' loading='{{preLoading}}'>上一页</button>
+   <button class='page-btn' bindtap='onNextPageTap'
+   loading='{{nextLoading}}'>下一页</button>
+</view>
+
+
+</view>

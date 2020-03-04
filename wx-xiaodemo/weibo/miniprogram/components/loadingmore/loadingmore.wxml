@@ -1,0 +1,5 @@
+<button class='loading-btn' loading="{{hasmore}}" style='height:{{height}}px;'>
+<block wx:if="{{hasmore}}">{{loadingtext}}</block>
+<block wx:else>{{loadedtext}}</block>
+</button>
+
