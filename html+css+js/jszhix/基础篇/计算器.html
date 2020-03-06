@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var n1,n2,op,ren;
+			
+		n1=Number(window.prompt("请输入第一个数")) ;
+		console.log(n1);
+		op=window.prompt("请输入运算符");	
+			console.log(op);		
+		n2=Number(window.prompt("请输入第二个数")) ;
+			console.log(n2);
+			switch(op){
+				case"-":
+				ren=n1-n2;
+				break;
+				
+				case"+":
+				ren=n1+n2;
+				break;
+				
+				case"*":
+				ren=n1*n2;
+				break;
+				
+				case"/":
+				ren=n1/n2;
+				break;
+				
+				default:
+				alert("请正确输入");
+				
+			}
+			alert("计算结果为"+ren);
+			
+		</script>
+	</body>
+</html>

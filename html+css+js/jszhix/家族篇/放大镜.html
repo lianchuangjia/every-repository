@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				border: none;
+			}
+			#box{
+				width: 400px;
+				height: 400px;				
+				margin: 100px 0 0 100px;
+				position: relative;
+				
+			}
+			#small_box{
+				width: 100%;
+				height: 100%;
+				border: 1px solid #CCCCCC;
+				box-sizing: border-box;
+				position: relative;
+			}
+			
+			#small_box img{
+				width: 100%;
+				height: 100%;
+			}
+			#mask{
+				width: 100px;
+				height: 100px;
+				background-color:rgba(255,255,0 ,.4);
+				position: absolute;
+				left: 0;
+				top: 0;
+				cursor: move;
+				display: none;
+			}
+			#big_box{
+				width: 600px;
+				height: 600px;
+				border: 1px solid #CCCCCC;
+				position: absolute;
+				left: 410px;
+				top: 0;
+				overflow: hidden;
+				display: none;
+			}
+			#big_box img{
+				width: 150%;
+				height: 150%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				
+			}
+			#list{
+				width: 400px;
+				height: 100px;		
+				margin: 20px 0 0 100px;
+			
+			}
+			#list ul li{
+			   width: 19%;
+				height: 100px;	
+				float: left;
+				margin: 1px;
+				cursor: pointer;
+			}
+			#list ul li img{
+				width: 100%;
+				height: 100%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="small_box">
+				<img src="../img/fdaojing/1.jpg" />
+				<span id="mask"></span>
+			</div>
+			<div id="big_box">
+			<img src="../img/fdaojing/1.jpg" />
+			
+			</div>
+		</div>
+		<div id="list">
+			<ul>
+				<li><img src="../img/fdaojing/1.jpg" /></li>
+				<li><img src="../img/fdaojing/2.jpg" /></li>
+				<li><img src="../img/fdaojing/3.jpg" /></li>
+				<li><img src="../img/fdaojing/4.jpg" /></li>
+				<li><img src="../img/fdaojing/5.jpg" /></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.addEventListener('load',function () {
+			var box=document.getElementById('box');
+			var s_box=box.children[0];
+			var b_box=box.children[1];
+			var mask=s_box.children[1];
+			var b_img=b_box.children[0];
+			var list_lis=document.getElementById('list').getElementsByTagName('li');
+			
+			//监听鼠标进入小盒子
+			s_box.addEventListener('mouseover',function () {
+				//显示隐藏的内容
+				mask.style.display='block';
+				b_box.style.display='block';
+				
+				
+				//监听鼠标的移动
+				s_box.addEventListener('mousemove',function (ev) {
+					var e= ev || window.event;
+					//定位鼠标的位置
+				var pointX=e.pageX-box.offsetLeft-mask.offsetWidth/2;
+				var pointY=e.pageY-box.offsetTop-mask.offsetHeight/2;
+				  
+				  //边界检测
+				  if(pointX<0){
+				  	pointX=0
+				  }else if(pointX>s_box.offsetWidth-mask.offsetWidth-2){
+				  	pointX=s_box.offsetWidth-mask.offsetWidth-2
+				  }
+				  
+				   if(pointY<0){
+				  	pointY=0
+				  }else if(pointY>s_box.offsetHeight-mask.offsetHeight-2){
+				  	pointY=s_box.offsetHeight-mask.offsetHeight-2
+				  }
+				  
+				  //发大镜动起来
+				  mask.style.left=pointX+'px';
+				  mask.style.top=pointY+'px';
+				
+				//大盒子图片动起来
+			/*	
+			 * 小盒子x/大盒子x=小盒子.width/大盒子.width
+			 * 大盒子x = 小盒子x /(小盒子.width/大盒子.width)
+			 * */
+				
+				b_img.style.left=-pointX/(s_box.offsetWidth/b_box.offsetWidth)+'px';
+				b_img.style.top=-pointY/(s_box.offsetHeight/b_box.offsetHeight)+'px';
+					
+				});
+				
+				
+			});
+			
+			
+			//监听鼠标离开小盒子
+			s_box.addEventListener('mouseout',function () {
+				//隐藏显示的内容
+				mask.style.display='none';
+				b_box.style.display='none';
+				
+			});
+			
+			
+			//换图片
+			for(var i=0;i<list_lis.length;i++){
+				
+				(function (i) {
+					var li=list_lis[i];
+					li.addEventListener('mouseover',function () {
+						s_box.children[0].src='../img/fdaojing/'+(i+1)+'.jpg';
+						b_img.src='../img/fdaojing/'+(i+1)+'.jpg';
+						
+					});
+					
+					
+				})(i)
+				
+			}
+			
+			
+		});
+		
+	</script>
+</html>

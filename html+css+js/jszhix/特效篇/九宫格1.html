@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			#container{
+				width: 1200px;
+				margin:0 auto;
+				
+			}
+			#top{
+				padding: 20px;
+				
+			}
+			#bottom{
+				position: relative;
+			}
+			.box{
+				width: 220px;
+				height: 360px;
+				margin: 0 15px 15px 0;
+				background-color:#e8e8e8;
+				
+			}
+			.box img{
+				width: 220px;
+				height: 300px;
+			}
+			.box p{
+				color: orangered;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="top">
+				<button id="btn1">3列</button>
+				<button id="btn2">4列</button>
+				<button id="btn3">5列</button>
+			</div>
+			<div id="bottom">
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function () {
+			
+			function $(id) {
+				return typeof id ==='string'?document.getElementById(id):null;
+			}
+			
+			function jiuge(lieshu,pn) {
+				var boxW=220,boxH=360,boxXY=15;
+				
+				for(var i=0;i<pn.children.length;i++){
+					
+					var row =Math.floor(i/lieshu);//行
+					var col=Math.floor(i%lieshu);//列
+					
+				console.log("当前盒子所在的坐标：("+row+","+col+")");	
+					
+					var sd=pn.children[i];
+					
+					sd.style.position='absolute';
+					sd.style.left=col*(boxW+boxXY)+'px';
+					sd.style.top=row*(boxH+boxXY)+'px';
+					
+					
+					
+				}
+				
+				
+			}
+			
+			
+	//调用		
+		$('btn1').addEventListener('click',function () {
+			jiuge(3,$('bottom'));
+		});	
+		$('btn2').addEventListener('click',function () {
+			jiuge(4,$('bottom'));
+		});		
+		$('btn3').addEventListener('click',function () {
+			jiuge(5,$('bottom'));
+		});	
+			
+			
+		}
+	</script>
+</html>

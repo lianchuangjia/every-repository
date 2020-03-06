@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="../myTool/myTool.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.addEventListener('load',function () {
+			gaibe();
+			
+			window.addEventListener('resize',gaibe);
+			
+			//改变颜色
+			function gaibe() {
+				
+				//可视宽度
+				if(myTool.client().width>=960){
+					
+					document.body.style.backgroundColor='red';
+				}else if(myTool.client().width>=650){
+					
+					document.body.style.backgroundColor='blue';
+				}else{
+					document.body.style.backgroundColor='yellow';
+				}
+				
+				
+			}
+			
+		});
+	</script>
+</html>

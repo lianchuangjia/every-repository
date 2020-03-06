@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			form{
+				align-content: center;
+				margin: 20px;
+				width: 400px;
+				height: 400px;
+				border: 1px solid black;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			手机号码：<input id="phone" name="手机号码" size="20" />
+			<br />
+			邮箱       ：<input id="email" name="邮箱" size="20"  /><br />
+			姓名       ：<input id="name" name="姓名" size="20"  />
+			
+		</form>
+		
+		
+	
+		
+
+		
+	</body>
+	<script type="text/javascript">
+	//验证手机号
+	/*	window.onload=function  () {
+			
+			var sd=document.getElementById('phone');
+			
+			sd.onblur=function () {
+			var phoneReg= /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+			if(!phoneReg.test(this.value)){
+				this.style.borderColor='red';
+			}else{
+				this.style.borderColor='blue';
+			}			
+			};
+			
+			
+		};
+		*/
+	checkInput('phone',/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/);	
+	checkInput('email',/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/);		
+	checkInput('name',/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/);	
+		
+		
+		
+		
+	//封装一个方法
+	
+	function checkInput(eleid,reg) {
+		
+			var ele=document.getElementById(eleid);
+			
+			ele.onblur=function () {				
+			
+			if(!reg.test(this.value)){
+				
+				this.style.borderColor='red';
+				alert(this.name+"不正确");
+				
+			}else{
+				
+				this.style.borderColor='blue';
+			}			
+			};
+			
+	}
+	
+	
+	
+		
+		
+		
+		
+	</script>
+</html>

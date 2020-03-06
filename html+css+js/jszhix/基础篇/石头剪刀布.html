@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script >
+		
+		var comper,player;
+		
+		comper =parseInt(Math.random()*3);
+		console.log("电脑"+comper);
+		
+		player = parseInt(Number(window.prompt("请出拳：0-》石头，1-》剪刀，2-》布")) );
+		console.log(player);
+		
+		if(player<0 || player>3){
+			alert("请重新出拳");
+			player = parseInt(Number(window.prompt("请出拳：0-》石头，1-》剪刀，2-》布")) );
+		}else{
+			
+			if(
+				(player == 0 && comper == 1) ||
+				(player == 1 && comper == 2) ||	
+				(player == 2 && comper == 0)
+			){
+				alert("恭喜你，你赢了");
+				
+			}else if(
+				(player == 0 && comper == 2) ||
+				(player == 1 && comper == 0) ||	
+				(player == 2 && comper == 1)
+			){
+				alert("很遗憾，你输了");
+				
+			}else{
+				alert("平局");
+			}
+			
+		}
+		
+		</script>
+	</body>
+</html>

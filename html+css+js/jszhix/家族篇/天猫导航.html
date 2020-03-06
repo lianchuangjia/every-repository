@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				
+			}
+			body{
+				background-color: paleturquoise;
+			}
+			#nav{
+				width: 900px;
+				height: 63px;
+				background: url('../img/tm2.png') no-repeat right;
+				color: black;
+				border-radius: 5px;
+				position: relative;
+                margin: 100px auto;
+                
+			}
+			#nav ul{
+				position: relative;
+			}
+			#nav ul li{
+				float: left;
+				width: 88px;
+				height: 63px;
+				text-align: center;
+				line-height: 70px;
+				cursor: pointer;
+			}
+			
+			#t_mall{
+				width:88px;				
+				height: 63px;
+				background: url('../img/1.png') no-repeat;
+			    opacity: 0.8;
+				background-size: 100% 100%;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<nav id="nav">
+			<span id="t_mall"></span>
+			<ul>
+				<li>双11狂欢</li>
+				<li>服装会场</li>
+				<li>数码家电</li>
+				<li>家具建材</li>
+				<li>母婴童装</li>
+				<li>手机会场</li>
+				<li>美妆会场</li>
+				<li>进口会场</li>
+				<li>飞猪旅行</li>
+			</ul>
+		</nav>
+	</body>
+	<script src="../myTool/myTool.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.addEventListener('load',function  () {
+		
+	      var nav=myTool.$('nav');
+		  var t_mall=nav.children[0];
+		  var ul=nav.children[1];
+		  var alllis=ul.children;
+		
+		//记录鼠标点击位置
+		var beginX=0;
+		
+		for(var i=0;i<alllis.length;i++){
+			var li=alllis[i];
+			
+				//监听鼠标进入
+				li.addEventListener('mouseover',function () {
+					end=this.offsetLeft;
+				});
+				//监听鼠标点击
+				li.addEventListener('mousedown',function () {
+					beginX=this.offsetLeft;
+					
+				});
+				//监听鼠标离开
+				li.addEventListener('mouseout',function () {
+					end=beginX;
+				});
+								
+							
+			
+		}
+		var begin=0,end=0;
+		setInterval(function() {
+			
+			begin+=(end-begin)*0.2;
+			
+			t_mall.style.left=begin+'px';
+			
+			
+			
+		},10);
+				
+	
+			
+		});		
+	</script>
+</html>

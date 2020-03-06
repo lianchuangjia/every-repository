@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function  () {
+				
+//			var s=document.getElementById("as");
+//另一种得到id的方式
+            var s=document.querySelector("#as");		
+			
+			
+			s.onmouseover=function  () {
+				s.src="../img/bg2.jpg";
+				console.log("移动到图片上");
+			}
+			s.onmouseout=function  () {
+				s.src="../img/bg.jpg";
+				console.log("移动出图片");
+			}
+			s.onmousemove=function  () {
+				console.log("在图片上移动");
+			}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<img id="as" src="../img/bg.jpg" width="200px" height="200px" />
+	</body>
+</html>

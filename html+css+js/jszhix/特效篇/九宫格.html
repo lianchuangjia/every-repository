@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			#container{
+				width: 1200px;
+				margin:0 auto;
+				
+			}
+			#top{
+				padding: 20px;
+				
+			}
+			#bottom{
+				position: relative;
+			}
+			.box{
+				width: 220px;
+				height: 360px;
+				margin: 0 15px 15px 0;
+				background-color:#e8e8e8;
+				
+			}
+			.box img{
+				width: 220px;
+				height: 300px;
+			}
+			.box p{
+				color: orangered;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="top">
+				<button id="btn1">3列</button>
+				<button id="btn2">4列</button>
+				<button id="btn3">5列</button>
+			</div>
+			<div id="bottom">
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+				<div class="box">
+					<img src="../img/bg2.jpg" />
+					<h4>以为遇见你</h4>
+					<p>世界才会变得美丽</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function () {
+			//封装得到id函数
+			function dedaoid(id) {
+			return typeof id==='string'?document.getElementById(id):null;
+			}
+			
+			
+			
+			
+			//封装九宫格的函数
+			//allCols 总列数，pn父盒子
+			function j_flex(allCols,pn) {
+				var boxW=220, boxH=360,boxXY=15;				
+			//遍历每个子盒子	
+				for(var i=0;i<pn.children.length;i++){		
+				//floor向下取整	,ceil向上取整，得到每个坐标的行和列
+					var row=Math.floor(i/allCols);//行
+					var col=Math.floor(i%allCols);//列
+					console.log("当前盒子所在的坐标：("+row+","+col+")");							
+				//盒子的定位						
+					var currentBox =pn.children[i];
+					currentBox.style.position='absolute';
+					currentBox.style.left=col*(boxW+boxXY)+'px';
+					currentBox.style.top=row*(boxH+boxXY)+'px';
+					
+				}																				
+			}
+		
+		
+	//调用	
+		
+		dedaoid('btn1').addEventListener('click',function () {
+			j_flex(3,dedaoid('bottom'));
+		});
+		
+		dedaoid('btn2').addEventListener('click',function  () {
+			j_flex(4,dedaoid('bottom'));
+		});
+		dedaoid('btn3').addEventListener('click',function  () {
+			j_flex(5,dedaoid('bottom'));
+		});
+			
+		}
+	</script>
+</html>

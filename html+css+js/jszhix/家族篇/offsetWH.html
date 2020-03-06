@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 150px;
+				padding: 10px;
+				border: 5px solid blue;
+				margin: 20px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script src="../myTool/myTool.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.addEventListener('load',function  () {
+			
+			//offseWidth 获得自身的宽度   即内容，边框，内边距
+			//offsetWidth=width+border+padding;
+			
+			//offsetHeight 获得自身的宽度   即内容，边框，内边距
+			//offsetHeight=height+border+padding;
+			
+		var w=	myTool.$('box').offsetWidth;
+			console.log(w);
+		var h=	myTool.$('box').offsetHeight;
+			console.log(h);
+		});
+	</script>
+</html>

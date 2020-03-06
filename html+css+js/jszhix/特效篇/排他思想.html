@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<button>1</button>
+	<button>2</button>
+	<button>3</button>
+	<button>4</button>
+	<button>5</button>
+	<button>6</button>
+	
+		
+		
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function  () {
+			var buttons =document.getElementsByTagName('button');
+			
+			for(var i=0;i<buttons.length;i++){
+				
+			/*	buttons[i].onclick=function () {
+					alert("你点击了"+i+"按钮");
+				}*/
+			//排他思想	
+				(function  (ide) {					
+					buttons[ide].onclick=function () {
+					alert("你点击了"+(ide+1)+"按钮");
+				}
+					
+				})(i)
+				
+				
+				
+			}
+			
+			
+		}
+		
+	</script>
+</html>

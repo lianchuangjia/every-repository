@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				display: inline-block;
+                 border: 1px solid #0000FF;
+                 padding: 10px;
+                 margin: 1px;
+			}
+		</style>
+	</head>
+	<body>
+	<script id="while1" type="text/html">
+			//爱你3000遍
+			var s=0;
+			while(s<3000){
+				s++;
+			console.log("爱你"+s+"遍!\n");
+//              alert("爱你"+s+"遍!\n");
+			}
+			
+		</script>
+	
+	<!--//死循环
+	//while(1):
+	-->
+	<script type="text/html">
+		//计算1+2+3+...+10的和
+		
+		var s=0,n=1;
+		while(n<=100){
+			s+=n;
+			n++;
+			
+		}
+		alert(s);
+		
+	</script>
+	
+	<script type="text/html">
+		//1--1000 中7的倍数
+		var nu=1;
+		var su=0;
+		
+		while(nu<100){
+			if(nu % 7===0){
+				su++;
+				console.log(nu);
+			}
+			nu++;
+			console.log(su);
+			
+			
+		}
+	</script>
+	
+	<script type="text/javascript">
+		//continue直接跳出当前循环，进行下一次循环
+		//break 跳出循环，进行下一步语句
+		
+		
+		/*var num=0;
+		while(num<=100){
+			num++;
+			if(num %2 !==0){//奇数
+				continue;
+			}
+			console.log(num);
+		}*/
+		
+//do while 先执行一次，在来判断是否继续循环	
+/*		var x=1;
+		do{
+			console.log(x);
+			x++;
+		}while (x<10);*/
+		
+		
+		
+		
+		
+	</script>
+	
+	
+	<script id="for" type="text/javascript">
+		
+//		for死循环
+//		for(;;);与while(1);都为死循环
+
+
+
+	//好友列表
+/*	for(var i=1;i<=5;i++){
+		console.log("好友列表"+i);
+		for(var j=1;j<=6;j++){
+			console.log("好友"+j);
+		}
+		
+	}*/
+	
+//九九乘法表
+
+	for(var i=1;i<=9;i++){
+		for(var j=1;j<=i;j++){
+		window.document.write("<span>"+i+"*"+j+"="+i*j+"\n"+"</span>");
+	}
+		document.write("<br />");
+	}
+	
+		
+	</script>
+	</body>
+</html>

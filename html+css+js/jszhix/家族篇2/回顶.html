@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			
+		<style type="text/css">
+				*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				border: none;
+				
+			}
+			body{
+				background-color:#ccc;
+			}
+			
+			
+			p{
+				
+				margin-bottom: 20px;
+				text-align: center;
+				
+			}
+			#top{
+				width: 43px;
+				height: 43px;
+				background:url("../img/tu/A1.jpg") no-repeat;
+				background-size: 100% 100%;
+				position: fixed;
+				right: 10px;
+				bottom: 30px;
+				display: none;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<span id="top">		
+		</span>
+		<div>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			
+		</div>
+	</body>
+	<script src="../myTool/myTool.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		window.addEventListener('load',function () {
+			var scrollTopH=0,timeID=null,begin=0,end=0;
+			
+			window.addEventListener('scroll',function () {
+				
+				scrollTopH=myTool.scroll().top;
+				//显示隐藏
+				scrollTopH>0?myTool.show(myTool.$('top')):myTool.hide(myTool.$('top'));
+				begin=scrollTopH;
+			});
+			
+			myTool.$('top').addEventListener('click',function () {
+				
+				clearInterval(timeID);
+				
+				timeID=setInterval(function () {
+					
+					begin+=(end-begin)*0.2;
+					
+					window.scrollTo(0,begin);
+					if(Math.round(begin)===end){
+						clearInterval(timeID);
+					}
+					
+					
+				},20);
+				
+				
+			});
+			
+			
+			
+			
+			
+		});
+		
+		
+	</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#fa{
+				width: 400px;
+				height: 400px;
+				border: 1px solid blue;
+				padding: 20px;
+				margin: 30px;
+				background-color: red;
+				position: relative;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				border: 1px solid yellow;
+				padding: 10px;
+				margin: 20px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="fa">
+			<div id="box"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById('box');
+		
+		//如果父盒子没有定位，以body为标准
+		//相对于父盒子的位置
+		//left，top 父盒子的内边距+子盒子的外边距
+		
+		
+		var l=box.offsetLeft;
+		var t=box.offsetTop;
+		console.log(l,t);
+		
+	</script>
+</html>

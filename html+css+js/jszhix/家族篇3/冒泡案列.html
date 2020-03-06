@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			html,body{
+				width: 100%;
+				height: 3000px;
+				
+			}
+			
+			#panel{
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				opacity: 0.4;
+				left: 0;
+				top: 0;
+				position: absolute;
+			display: none;
+			}
+			#login{
+				width: 300px;
+				height: 300px;
+				border-radius: 5px;				
+				background-color: skyblue;
+				display: none;
+				
+				position: fixed;
+			/*	绝对定位,相对于浏览器窗口*/
+				left: 50%;
+				top: 50%;
+		/*		transform 该属性允许我们对元素进行旋转、缩放、移动或倾斜*/
+		/*translate可以2d转化*/
+			transform: translate(-150px,-150px);
+			/*	因为宽高都是300px,定位为50%,所以-150*/
+				
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">立即登录</button>
+		<div id="panel"></div>
+		<div id="login"></div>
+	</body>
+	<script type="text/javascript">
+		window.addEventListener('load',function () {
+			var btn=document.getElementById('btn');
+			var panel=document.getElementById('panel');
+			var login=document.getElementById('login');
+			
+			
+			btn.addEventListener('click',function (e) {
+				//显示面板和蒙版
+				panel.style.display='block';
+				login.style.display='block';
+				
+				//隐藏滚动条
+				document.body.style.overflow='hidden';
+				
+				
+				//阻止冒泡,防止关连到下面的document
+				if(e && e.stopPropagation()){//标准模式
+					e.stopPropagation();
+				}else{//ie模式
+					e.cancelBubble=true;
+				}
+				
+				
+			});
+			document.addEventListener('click',function (eve) {
+				var e=eve ||window.event;
+				
+				//获取点击标签
+				//console.log(e.target);
+				var targetId=e.target?e.target.id:e.srcElement.id;
+				
+				if(targetId!=='login'){
+					panel.style.display='none';
+				    login.style.display='none';
+				    document.body.style.overflow='auto';
+				}else{
+					
+					window.location.href='http://www.baidu.com';
+					
+				}
+				
+				
+			});
+			
+			
+		});
+	</script>
+</html>

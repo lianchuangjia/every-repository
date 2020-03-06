@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		//要求一个用户输入一个分数，判断等级
+		//A 90-100 B 80-89 C 70-79 D 60-69 E 0-59
+		//if
+		
+		<script type="text/javascript">
+			//if
+	/*		var s=parseInt( Number(window.prompt("请输入你的成绩0-100之间"))) ;
+			console.log(s);
+			
+		if(s>=90 && s<=100){
+				alert("你的等级为A");
+			}
+		    else if
+			(s>=80 && s<=89){
+				alert("你的等级为B");
+			}
+			else if
+			(s>=70 && s<=79){
+				alert("你的等级为C");
+			}
+			else if
+			(s>=60 && s<=69){
+				alert("你的等级为D");
+			}
+			else if
+			(s>=0 && s<=59){
+				
+				alert("你的等级为E");
+			}else{
+				alert("请正确输入分数");
+				
+			}*/
+			//switch的穿透性
+		var score;
+		score =+(window.prompt("请输入你的成绩0-100之间\n"));
+		
+			switch(parseInt(score/10)){
+				case 10:
+				case 9:
+				alert("你的等级为A");
+				break;
+				
+				case 8:
+				alert("你的等级为B");
+				break;
+				
+				case 7:
+				alert("你的等级为C");
+				break;
+				
+				case 6:
+				alert("你的等级为D");
+				break;
+				
+				default:
+				
+				alert("你的等级为E");
+				break;
+				
+				
+			}
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

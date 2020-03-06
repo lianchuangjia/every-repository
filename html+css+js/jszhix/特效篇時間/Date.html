@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn1">开始</button>
+		<button id="btn2">停止</button>
+	</body>
+	<script type="text/javascript">
+	window.onload=function  () {
+		
+	/*	//循环执行
+		setInterval(function(){
+			console.log("哈哈哈");
+		},2000)
+	*/
+		
+	//设置和清除定时器案列
+		
+		var sg=165,inshiqi;
+		function $(id) {
+		return typeof id ==='string'?document.getElementById(id):null;				
+		}
+		$('btn1').addEventListener('click',function () {
+			clearInterval(inshiqi);
+		
+			inshiqi=setInterval(function(){
+				sg+=1;
+				console.log("夏的身高："+sg+"cm");
+			},1000);
+			
+			
+		});
+		$('btn2').addEventListener('click',function () {
+			
+			clearInterval(inshiqi);
+		});
+		
+	}
+		
+	</script>
+</html>

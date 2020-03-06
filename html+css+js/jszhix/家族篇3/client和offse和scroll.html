@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				border: 10px solid #ccc;
+				padding: 20px;
+			
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p>我发</p><p>我发</p><p>我发</p><p>我发</p><p>我发</p>
+			<p>我发</p><p>我发</p><p>我发</p><p>我发</p><p>我发</p>
+			<p>我发</p><p>我发</p><p>我发</p><p>我发</p><p>我发</p>
+			<p>我发</p><p>我发</p><p>我发</p><p>我发</p><p>我发</p>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById('box');
+		
+	//1.width与height
+		
+	/*	
+	 * 
+	 * //border + padding +  内容宽度和高度
+		console.log(box.offsetWidth,box.offsetHeight);//260 260
+		
+		//  padding +  内容宽度和高度
+		console.log(box.clientWidth,box.clientHeight);//240 240
+		
+		
+		//里面内容  内容滚动的宽度和高度
+		console.log(box.scrollWidth,box.scrollHeight);
+		
+		*/
+		
+	//2.left 和	top
+		//offseLeft:当前元素距离有定位的父盒子左边的距离
+		//offseTop:当前元素距离有定位的父盒子上边的距离
+		console.log(box.offsetLeft,box.offsetTop);
+		
+		//clientLeft:左边边框的宽度
+		//clientTop:上边边框的宽度
+		console.log(box.clientLeft,box.clientTop);
+		
+		//scrollLeft：左边滚动的距离
+		//scrollTop：上边滚动的距离
+		console.log(box.scrollLeft,box.scrollTop);
+		
+		
+	</script>
+</html>

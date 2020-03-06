@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function () {
+				//id获得
+				var a1=document.getElementById("btn");
+				console.log(a1);
+				//name获得，得到的为数组，需要下标
+				var a2=document.getElementsByName("btn")[0];
+				console.log(a2);
+				//class name获得，得到的为数组，需要下标
+				var a3=document.getElementsByClassName("btn")[1];
+				console.log(a3);
+				//根据所选元素获得，得到的为数组，需要下标
+				var a4=document.getElementsByTagName("button")[0];
+				console.log(a4);
+				
+				//选择器获得，可以填#btn ， .btn ,button等等
+				var a5=document.querySelector("button");
+				console.log(a5);
+				//选择器获得，全部，可以填#btn ， .btn等等
+				var a6=document.querySelectorAll(".btn")[1];
+			    console.log(a6);
+			    
+			}
+			
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<button class="btn" name="btn" id="btn">点我</button>
+		<button class="btn" name="btn" >点我2</button>
+	</body>
+</html>

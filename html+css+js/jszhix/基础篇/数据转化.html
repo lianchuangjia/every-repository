@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+<script id="tostring" type="text/html">
+
+		
+			var s=123;
+			var s1=s.toString();
+			console.log(typeof  s1);		
+			
+			//可以转化为进置
+			var n =123;
+			var a=n.toString(16);
+			var a1=n.toString(2);
+			var a2=n.toString(8);
+			var a3=n.toString(10);
+			console.log(a);
+			console.log(a1);
+			console.log(a3);
+			console.log(a2);
+			console.log(typeof a);
+			
+			//null undefined没有tostring方法，调用报错
+			
+		</script>
+		
+		
+<script id="string" type="text/html">
+			
+			var q=null;
+			var q1=String(q);
+			console.log(typeof q1);
+			
+			var w=undefined;
+			var w1=String(w);
+			console.log(typeof w1);
+			
+			
+			
+		</script>
+	
+<script type="text/html">
+		//字符串转number
+		var e=1234;
+		var e1=Number(e);
+		console.log(e1);
+		console.log(typeof e1);
+		
+		
+		
+	</script>
+	
+<script type="text/html">
+		//parseInt 和 parseFloat
+		//parseInt 可以转2,8,10,16进制
+		//parseFloat只能10
+		var s1="10mid";
+		var r1=parseInt(s1);
+		console.log(r1);
+		//10
+		
+		var s2="200x300";
+		var r2=parseInt(s2);
+		console.log(r2);
+		//200
+		
+		
+		var s3="dfsff001";
+		var r3=parseInt(s3);
+		console.log(r3);
+		//NaN
+		
+		var s4=" ";
+		var r4=parseInt(s4);
+		console.log(r4);
+		//NaN
+		
+		
+		var s5="10.5renm";
+		var r5=parseFloat(s5);
+		console.log(r5);
+		//10.5
+		
+		var s6="10.5.9.9.9.8renm";
+		var r6=parseFloat(s6);
+		console.log(r6);
+		//10.5
+		
+		
+	</script>
+	
+	<script id="转布尔类型">
+	//false
+		console.log(Boolean(0));
+		console.log(Boolean(''));
+		console.log(Boolean(null));
+		console.log(Boolean(undefined));
+		console.log(Boolean(NaN));
+		
+		
+	//true	
+		console.log(Boolean(-1));
+		console.log(Boolean('itdssd'));
+		console.log(Boolean(123));
+	
+	</script>
+	
+	</body>
+</html>

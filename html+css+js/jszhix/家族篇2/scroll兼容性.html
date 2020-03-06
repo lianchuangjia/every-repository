@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 3000px;
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		window.onscroll=function () {
+			//严格模式和怪异模式
+			//遵循w3的为严格模式，反之为怪异模式
+			//谷歌，火狐等为严格模式
+			//ie低版本为怪异模式
+		/*	CSS1Compat为严格模式
+			document.compatMode 可查询模式
+			ie进行了伪装也会显示CSS1Compat*/
+			
+		//ie低版本可以运行，但谷歌等不行	
+//	  console.log( 'body'+  document.body.scrollTop   );
+//	  console.log('他的模式为'+document.compatMode );	
+	  
+		//兼容
+		//ie不可以运行，但谷歌可以	
+//	  console.log( '兼容'+  document.documentElement.scrollTop   );	
+//		  console.log('他的模式为'+document.compatMode );		
+	
+	//要兼容俩种模式可以
+		//	 console.log( document.documentElement.scrollTop || document.body.scrollTop   );	
+			 
+			 
+	//兼容全版本浏览器		 
+			 
+	//	console.log(document.pageYOffset);	 
+			 
+		var sd =document.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+		console.log(sd);
+			 
+			 
+		}
+	/*	JS出现兼容问题一般在滚动或者页面移动*/
+		
+	</script>
+</html>

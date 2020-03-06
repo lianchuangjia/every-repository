@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="yy"style="position: relative;">
+			<div id="ff" >
+				<div id="son"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var son=document.getElementById('son');
+		//offsetParent没有定位就一直到body
+		console.log(son.offsetParent);
+		console.log(son.parentNode);
+		
+		
+	//	style.xxx与offsexxx的区别
+	//1.offsetxxx只能读,style可以读写
+	//2.offsetxxx可以获取所有,style只能获取行内
+	//3.offsetxxx返回数字,style返回字符串还应有‘px’
+	</script>
+</html>

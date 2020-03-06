@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button id="btn">按钮</button>
+	</body>
+	
+	<script type="text/javascript">
+			
+			window.onload=function () {
+				var btn=document.getElementById('btn');
+				
+		/*		btn.onclick=function () {
+					alert("1");
+				}
+			
+				btn.onclick=function () {
+					alert("2");
+				}	
+				
+				btn.onclick=function () {
+					alert("3");
+				}
+			//多个方法会用最后一个方法去覆盖其他方法，结果只有一个方法执行	
+				*/
+				
+			//addEventListener 创建元素监听
+			//多个方法都会被执行
+		btn.addEventListener('click',function  () {
+			window.location.href="http://www.baidu.com";
+			alert("1");
+		});
+		btn.addEventListener('click',function  () {
+			window.location.href="http://www.tmall.com";
+			alert("2");
+		});		
+		btn.addEventListener('click',function  () {
+			window.location.href="http://www.qq.com";
+			alert("3");
+		});
+		
+		
+		
+		
+		
+		
+			}
+			
+			
+			
+			
+			
+		</script>
+</html>

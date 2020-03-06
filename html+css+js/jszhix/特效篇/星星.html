@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			body{
+				background-color: black;
+				
+			}
+			span{
+				width: 30px;
+				height: 30px;
+				position: absolute;
+                background: url("img/img.jpg") no-repeat;
+                background-size: 100% 100%;
+                animation: flash 1s alternate infinite;
+                
+			}
+			@keyframes flash{
+				0%{opacity: 0;}
+				100%{opacity: 1;}
+			}
+			span:hover{
+				transform:scale(3,3) rotate(180deg) !important;
+				transform: all 1s;
+			}
+		</style>
+		
+		
+		
+		
+		<script type="text/javascript">
+			window.onload=function () {
+				//得到屏幕大小
+				var x=document.documentElement.clientWidth;
+				var y=document.documentElement.clientHeight;
+				
+				//动态创建星星
+				for(var i=0;i<150;i++){
+					var span=document.createElement('span');
+					document.body.appendChild(span);
+					
+					//随机坐标
+					var x1=parseInt(Math.random()*x);
+					var y1=parseInt(Math.random()*y);
+					span.style.left=x1+'px';
+					span.style.top=y1+'px';
+					
+					//随机缩放
+					var s=Math.random()*1.2;
+					span.style.transform='scale('+s+','+s+')'
+					
+					//随机频率
+					var rate=Math.random()*1.5;
+					span.style.animationDelay=rate+'s'
+					
+				}
+				
+				
+				
+			}
+		</script>
+		
+		
+		
+	</head>
+	<body>
+		<span></span>
+		<!--<div> 
+		<img src="img/bg.jpg" width="60%" height="60%" style="margin:10%;" />
+		</div>-->
+	</body>
+</html>

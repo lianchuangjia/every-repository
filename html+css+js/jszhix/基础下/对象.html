@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/html">
+			//内置对象，Sring ，number，Boolean function等等
+			//宿主对象 BOM对象，DOM对象
+			//自定义对象
+			
+			
+			//工厂函数
+		/*	function aq(name ,pass, sex) {
+				var p=new Object;
+				p.name=name;
+				p.pass=pass;
+				p.sex=sex;
+				p.doi=function  () {
+					console.log("我会打代码");
+				}
+				return p;
+			}
+			var s1=aq("sc","cc",123);
+			console.log(s1);
+			var s2=aq("sc","cc",123);
+			console.log(s2);*/
+			
+//自定义构造函数
+/*function Pesonn (name,pass,sex) {
+	this.name=name;
+	this.pass=pass;
+	this.sex=sex;
+	this.dii=function  () {
+		console.log("我会打代码");
+	}
+	
+}
+var x1 = new Pesonn("dvv","df","cc");
+var x2 = new Pesonn("dvv","df","cc");
+console.log(x1);
+console.log(x2);
+console.log(x1===x2);
+*/
+
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	
+	<script id="this" type="text/html">
+		
+		//普通函数指向window
+	/*
+	    var sd ='张三';
+		function fc () {
+			console.log(this);
+			console.log(this.sd);
+		}
+		fc();
+		
+	*/
+	
+	//遍历对象 for。。。in。。。
+	var xl = {
+		'name':'nan',
+		'age':'cc',
+		'sex':'ccx',
+		'doIn':function(){
+			console.log('是宁德市女女女女');
+		}
+	}
+	/*				
+	for(var key in xl){
+		console.log(key);
+		console.log(key+':'+xl[key]);
+	}
+	*/
+	//删除
+	/*delete xl.name;
+	console.log(xl);*/
+	
+		
+	</script>
+	
+	
+	<script id="内置对象" type="text/html">
+		
+		//检查一个对象是否为数组		
+		//instanceof				
+	/*	
+		var arr =["cddd","dddd"];
+		console.log(arr instanceof Array);//true
+		console.log(arr instanceof object);//true
+		console.log(arr instanceof Number);//false
+		*/
+		
+		//isArray()
+		
+		var arr =["cddd","dddd"];		
+		console.log(Array.isArray(arr));
+		
+	</script>
+	
+	<script id="万数组头部尾部加删对象" type="text/html">
+		//toString() 转化为字符串
+		//valueof() 返回数组本身对象
+	/*	
+			var arr =["cddd","dddd"];
+		console.log(arr.toString());
+		console.log(arr.valueOf());
+		console.log(arr.valueOf()===arr);
+		
+		*/
+/*		
+		//join 
+			var arr =["1","2","3","4"];
+		var str =arr.join("----");
+		console.log(str);
+		*/
+		
+		var arr =["1","2","3","4"];
+	/*	//数组尾部添加用  push()
+		//数组尾部删除用  pop()
+		console.log(arr.push("as"));
+		console.log(arr);
+		
+		console.log(arr.pop());
+		console.log(arr);
+		*/
+		
+		
+		
+		
+		
+		//数组头部添加用  unshift()
+		//数组头部删除用  shift()
+		console.log(arr.unshift("as"));
+		console.log(arr);
+		
+		console.log(arr.shift());
+		console.log(arr);
+		
+		
+		
+	</script>
+	
+	
+	
+	
+	
+	<script  type="text/javascript">
+		var s=['1','2','3','4','8','7','0','55'];
+		
+		//反转数组
+	//	console.log(s.reverse());
+		
+		//合并 concat()
+		
+		
+		
+		//排序 sort()
+		//arr.sort();
+		//定义排序方式
+		function a (a,b) {
+			return a-b;
+		}
+		console.log(s.sort(a));
+		
+		
+		
+	</script>
+	
+	</body>
+</html>

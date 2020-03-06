@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			/*	去掉li的点*/
+				
+			}
+			#box{
+				border: 1px solid #cccccc;
+				width: 360px;
+				
+				padding-top: 360px;
+			/*	padding为内边距   ，margin 为外边距 上右下左  ，顺时针 ，repeat平铺   */
+				margin:100px auto ;
+				background: url("../img/bg2.jpg") no-repeat;
+				background-size: 100% 80%;
+			}
+			ul{
+				height: 20%;
+			
+				display: flex;
+			/*	flex弹性布局*/
+				justify-content: center;
+             align-items: center;
+                cursor: pointer;
+
+			}
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li id="li01"><img src="../img/tu/A0.jpg"  /></li>
+				<li id="li02"><img src="../img/tu/A1.jpg"  /></li>
+				<li id="li03"><img src="../img/tu/A2.jpg"  /></li>
+				<li id="li04"><img src="../img/tu/A3.jpg"  /></li>
+				<li id="li05"><img src="../img/tu/A4.jpg"  /></li>
+				
+			</ul>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function () {
+			
+			var li01=idfz('li01');
+			var li02=idfz('li02');
+			var li03=idfz('li03');
+			var li04=idfz('li04');
+			var li05=idfz('li05');
+			
+			var box=idfz('box');
+			
+			function idfz(id) {
+				return typeof id ==='string' ? document.getElementById(id):null;
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			li01.onmouseover=function  () {
+				
+				
+				cahng('box',0);
+			};
+			li02.onmouseover=function  () {
+				
+				cahng('box',1);
+			};
+			li03.onmouseover=function  () {
+				
+				cahng('box',2);
+			};
+			li04.onmouseover=function  () {
+				
+				cahng('box',3);
+			};
+			li05.onmouseover=function  () {
+				
+				cahng('box',4);
+			};
+			
+			
+			function cahng (liid,index) {
+				idfz(liid).style.background='url("../img/tu/A'+index+'.jpg") no-repeat';
+				
+			}
+			
+			
+			
+			
+		}
+		
+		
+	</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			body{
+				
+				text-align: center;
+				
+			}
+			#name{
+				font-size: 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<button id="btn1">开始点名</button>
+		<button id="btn2">停止点名</button>
+		<div id="name"></div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function  () {
+			
+			var btn1=document.getElementById('btn1');
+			var btn2=document.getElementById('btn2');
+			var name=document.getElementById('name');
+			
+			var dingshiqi=null;
+			
+			var nameArr=['流星','马玉','马化腾','新加坡','木鱼'];
+			
+		name.innerHTML=nameArr[0];
+			
+			
+			btn1.addEventListener('click',function () {
+			    
+			     clearInterval(dingshiqi);
+			     
+			     dingshiqi=setInterval(function  () {
+			     	var s_index=parseInt(Math.random()*nameArr.length) ;
+			   name.innerText=nameArr[s_index];
+			     	
+			     	
+			     },20);
+			
+			
+			});
+			
+			btn2.addEventListener('click',function () {
+			    
+			     clearInterval(dingshiqi);
+			     
+			 
+			
+			});
+				
+			
+			
+			
+		}
+		
+		
+	</script>
+</html>

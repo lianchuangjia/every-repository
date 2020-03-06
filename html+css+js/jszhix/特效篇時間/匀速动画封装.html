@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+				#box{
+				width: 100px;
+				height: 100px;
+			background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">开始</button>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		window.addEventListener('load',function () {
+			
+		donghua('btn','box',50,1200);
+		
+		
+		});
+		 
+		   
+ function donghua(btnid,boxid,miaoci,tingzhi) {
+		  	
+		var btn=document.getElementById(btnid);
+		var box=document.getElementById(boxid);
+		  	console.log(btn,box);
+		  	//intervalID定时器，begin开始的距离，target停止的距离
+	     var intervalID=null,begin=0,miaoci=miaoci,target=tingzhi;
+		
+		btn.addEventListener('click',function  () {
+			
+		      clearInterval(intervalID);
+		      
+		      intervalID=setInterval(function  () {
+		      	
+		      	begin+=miaoci;
+		      	if(begin>=target){
+		      		clearInterval(intervalID);
+		      	}else{
+		      		box.style.marginLeft=begin+'px';
+		      	}
+		      	
+		      	
+		      },100);
+		      
+		  	
+		  	
+		  	
+		  });
+		  
+	}	  
+		
+		
+	</script>
+</html>

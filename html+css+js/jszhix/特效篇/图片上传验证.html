@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	<label>上传图片</label>
+	<input type="file" id="file">
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function () {
+		var file=document.getElementById('file');
+		
+		file.onchange=function () {
+			//用来真的上传的
+		//	var pathd=this.files;
+		//	console.log(pathd);
+			
+			var path=this.value;
+			
+			pathjq=path.substr(path.lastIndexOf('.'));
+			
+			pathjqz=pathjq.toLowerCase();
+			
+			if(pathjqz === '.jpg'||pathjqz === '.png' || pathjqz=== '.gif'){
+				alert("上传成功");
+			}else{
+				alert("失败");
+			}
+			
+			
+		}
+			
+			
+			
+		}
+		
+		
+	</script>
+</html>

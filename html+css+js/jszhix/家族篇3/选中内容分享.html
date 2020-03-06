@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				
+			}
+			p{
+				margin: 100px;
+				width: 100px;
+			}
+			#share_wei_bo{
+				width: 26px;
+				height: 26px;
+				background: url('../img/tu/A0.jpg');
+				position: absolute;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="word">
+			这次哦是覅但是撒场比赛从爱上参数佛啊封测安抚本阿凡VS的v把技术的是风格四年
+		</p>
+		<div id="share_wei_bo"></div>
+	</body>
+	<script src="../myTool/myTool.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.addEventListener('load',function () {
+			var selectedText='';
+			//监听鼠标松开
+			myTool.$('word').addEventListener('mouseup',function (ev) {
+				
+				var e=ev||window.event;
+				
+				//获取选中文字
+				if(window.getSelection){//标准
+					selectedText=window.getSelection().toString();
+				}else{//ie
+					selectedText=document.selection.createRange().text;
+				}
+				
+				//显示
+				if(selectedText.length!==0){
+					myTool.$('share_wei_bo').style.display='block';
+					//处理位置
+					myTool.$('share_wei_bo').style.left=e.pageX+'px';
+					myTool.$('share_wei_bo').style.top=e.pageY+'px';
+				}
+				
+				
+				
+			});
+			
+			
+		});
+	</script>
+</html>

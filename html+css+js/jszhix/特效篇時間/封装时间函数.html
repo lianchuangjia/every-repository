@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	
+	window.onload=function () {
+		var s=formatData(new Date());
+		console.log(s);
+		
+	}
+	
+	
+	
+	
+	
+		//写一个函数，格式化日期对象，YYYY-MM-dd hh:mm:ss
+		
+		function formatData(d){
+			
+			//验证是否为Data
+			//instanceof 相当于 ==
+			if(!d instanceof Date){
+				return;
+			}			
+			//转化
+			var year=d.getFullYear();
+			var mouth=d.getMonth()+1;
+			var date=d.getDate();
+			var hour=d.getHours();
+			var minute=d.getMinutes();
+			var second=d.getSeconds();
+						
+			mouth=mouth<10?'0'+mouth:mouth;	
+			date=date<10?'0'+date:date;	
+			hour=hour<10?'0'+hour:hour;	
+			minute=minute<10?'0'+minute:minute;	
+			second=second<10?'0'+second:second;	
+					
+			return '得到的日期为：'+year+'-'+mouth+'-'+date+' '+hour+':'+minute+':'+second;			
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#box{
+			width: 800px;
+			height: 800px;
+		background: url("../img/time/22.jpg") no-repeat;
+			margin: 0 auto;
+			padding: 10px;
+			position: relative;
+		}
+		#hour,#min,#second{
+			position: absolute;
+			left: 48%;
+			top: 0;
+			width: 50px;
+			height: 800px;
+			margin-left:-15px;
+			
+		}
+		#hour{
+			background:url("../img/time/223.png") no-repeat center center;
+		}
+		#min{
+			background:url("../img/time/222.png") no-repeat center center;
+		}
+		#second{
+			background:url("../img/time/221.png") no-repeat center center;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="hour"> </div>
+			<div id="min"> </div>
+			<div id="second"> </div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function  () {
+			var hour=document.getElementById('hour');
+			var min=document.getElementById('min');
+			var second=document.getElementById('second');
+			
+			
+			setInterval(function  () {
+				var date=new Date();
+				console.log(date);
+				//getMilliseconds 得到毫秒数
+				var datehaomai=date.getMilliseconds();
+				
+				var s=date.getSeconds()+datehaomai/1000;
+				var m=date.getMinutes()+s/60;
+				var h=date.getHours()+m/60;
+				
+				hour.style.transform ='rotate('+h*30+'deg)';
+				min.style.transform = 'rotate('+m*6+'deg)';
+				second.style.transform ='rotate('+s*6+'deg)';
+				
+			},100);
+			
+		}
+	</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<input id="text1" type="text" size="10" />
+	</body>
+	<script type="text/javascript">
+		window.onload=function  () {
+			var text=document.getElementById('text1');
+			
+			text.onfocus=function  () {
+				this.style.border='1px solid red';
+			}
+			text.onblur=function  () {
+				this.style.border='1px solid red';
+			}
+			
+		}
+	</script>
+</html>

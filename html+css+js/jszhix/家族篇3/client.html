@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				border: 10px solid red;
+				padding: 20px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			理发师傅
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById('box');
+		
+		//width+内边距，无边框
+		console.log(box.clientWidth,box.clientHeight);//240 240
+		
+		//width+内边距+border，有边框
+		console.log(box.offsetWidth,box.offsetHeight);//260 260
+		
+		
+	</script>
+</html>

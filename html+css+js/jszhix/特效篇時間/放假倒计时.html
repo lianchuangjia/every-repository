@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		body{
+			background-color: black;
+		}
+			#time{
+				padding: 100px;
+				font-size: 60px;
+				text-align: center;
+				color: red;
+						
+		    }
+		</style>
+	</head>
+	<body>
+		<div id="time"></div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function  () {
+			var nowDate,nowTime,nextTime,alltime;
+			var time=document.getElementById('time');
+			
+			var nextDate=new Date('2019/7/13 00:00:00');
+			
+			
+			setInterval(function(){
+				//现在时间
+				 nowDate=new Date();
+				//毫秒数
+				 nowTime=nowDate.getTime();
+				 nextTime=nextDate.getTime();				 					
+				//剩余毫秒数
+				alltime=nextTime-nowTime;				
+				
+				var allscond=parseInt(alltime/1000);
+								
+				var d=size(parseInt(allscond / 3600 /24));
+				var h=size(parseInt(allscond /3600 %24));
+				var m=size(parseInt(allscond /60 %60));
+				var s=size(parseInt(allscond %60));
+				
+				
+			time.innerText= '离放假还有：'+d+'天'+h+'小时'+m+'分钟'+s+'秒';
+				
+			},1000);
+			
+			function size(num) {
+				return  num< 10 ? '0'+num:num;
+			}
+			
+		}
+	</script>
+</html>

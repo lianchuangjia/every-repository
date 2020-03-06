@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/html">
+		//	charAt() 字符
+		//	charCodeAt 字符编码
+	//	substr()
+	//trim()去除空白
+		
+		var str="cscvvvv233";
+		var newstr=str.substr(2,5);
+		console.log(newstr);
+		var newstr2=str.substr(str.lastIndexOf('s')+1);
+		console.log(newstr2);
+		
+		
+		</script>
+	
+	
+	<script type="text/javascript">
+		
+		//URL转化对象
+			
+		function getUrlParams (url) {			
+			var index=url.indexOf('?')+1;
+			var params=url.substr(index);
+			//在分割
+			var paramsArr =params.split('&');
+		//		console.log(paramsArr);		
+			var obj={};		
+			paramsArr.forEach(function (value,index1,array) {			
+				var tempArr =value.split('=');		
+				//console.log(tempArr);
+				var key=tempArr[0];			
+				obj[key]=tempArr[1];			
+				//console.log(obj);
+			});					
+			return obj;		
+		}		
+	var url='http://www.ssccc.com/user?name=xl&pwd=love&sex=女&age=22';
+	var obj=getUrlParams (url);
+		console.log(obj);
+		console.log(obj.sex);
+		console.log(obj.name);
+		console.log(obj.age);
+	</script>
+	
+	
+	
+	</body>
+</html>

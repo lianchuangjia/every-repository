@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+				#box{
+				width: 100px;
+				height: 100px;
+			background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">开始</button>
+		<div id="box"></div>
+	</body>
+	<script src="../myTool/myTool.js"></script>
+	<script type="text/javascript">
+		window.addEventListener('load',function () {
+			
+			var intervalID=null,begin=0,target=800;
+			
+			//缓存动画
+			//开始值+=（终点值-开始值）*缓存系数（一般在0-1,0.2）
+			
+			
+			myTool.$('btn').addEventListener('click',function () {
+				
+				clearInterval(intervalID);
+				
+				intervalID=setInterval(function () {
+					
+					begin+=(target-begin)*0.2;
+					
+					if(Math.round(begin)>=target){
+						begin=target;
+						clearInterval(intervalID);
+					}else{
+						myTool.$('box').style.marginLeft=begin+'px';
+					}
+					
+					
+					
+				},100);
+				
+				
+				
+				
+				
+			});
+			
+									
+			
+			
+		});
+		
+		
+		
+		
+	</script>
+</html>

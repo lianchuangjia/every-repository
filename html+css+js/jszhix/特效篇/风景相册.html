@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		/**{
+			margin: 0;
+			padding: 0;
+		}*/
+			ul li{
+			list-style: none;
+				float: left;
+				margin-left: 10px;
+			}
+		</style>
+		<script type="text/javascript">
+
+
+      window.onload=function () {
+		//1.获取需要的标签
+	var des=document.getElementById("des");
+	var big_img=document.getElementById("big_img");
+	
+	var s=document.getElementById("fj");
+	var al=s.getElementsByTagName("a");
+	
+	  //绑定事件
+	for(var i=0;i<al.length;i++){
+		
+		al[i].onclick=function () {
+			des.innerHTML=this.title;
+			big_img.src=this.href;
+			return false;
+		}
+	}
+	
+	
+}
+
+		</script>
+	</head>
+	<body>
+		<div>
+			<p id="des">非凡哥</p>
+			<img id="big_img" src="../img/bg.jpg" width="400px" height="300px" />
+			<ul id="fj">
+				<li>
+					<a href="../img/tu/A0.jpg" title="1">
+					<img  width="80px" height="50px" />
+					</a>
+				</li>
+				<li>
+					<a href="../img/tu/A1.jpg" title="2">
+					<img src="../img/tu/A1.jpg" width="80px" height="50px" />
+					</a>
+				</li>
+				<li>
+					<a href="../img/tu/A2.jpg" title="3">
+					<img src="../img/tu/A2.jpg" width="80px" height="50px" />
+					</a>
+				</li>
+				<li>
+					<a href="../img/tu/A3.jpg" title="4">
+					<img src="../img/tu/A3.jpg" width="80px" height="50px" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

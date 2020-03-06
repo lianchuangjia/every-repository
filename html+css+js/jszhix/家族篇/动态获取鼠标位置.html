@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 400px;
+				height: 400px;
+				background-color: red;
+				margin: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		
+			var box=document.getElementById('box');
+			//mousemove鼠标移动
+			box.addEventListener('mousemove',function (ev) {
+				
+				var e=ev || window.event;
+				
+				var x=e.clientX-box.offsetLeft;
+				var y=e.clientY-box.offsetTop;
+				box.innerText='('+x+','+y+')';
+				
+			});
+			
+			
+			
+	
+	</script>
+</html>

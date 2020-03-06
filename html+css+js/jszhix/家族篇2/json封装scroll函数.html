@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 3000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="we">我司</div>
+	</body>
+	<script src="../myTool/myTool.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	window.onscroll=function () {
+		console.log(myTool.$('we').innerHTML);
+		console.log(myTool.scroll().top);
+	}
+	
+		/*function scroll() {
+			
+			if(window.pageYOffset!==null){//全兼容性
+				return{
+					"top":window.pageYOffset,
+					"left":window.pageXOffset
+				}
+			}else if(document.compatMode=='CSS1Compat'){//w3c
+				return{
+					"top":document.documentElement.scrollTop,
+					"left":window.documentElement.scrollLeft
+				}
+				
+			}
+			return{
+				"top":document.body.scrollTop,
+				"left":window.body.scrollLeft
+			}
+			
+			
+		}*/
+		
+		
+	</script>
+</html>

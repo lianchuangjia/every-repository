@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+			}
+		</style>
+	<script type="text/javascript">
+	//父节点parentNode
+	//兄弟节点  nextElementSibling || bb.nextSibling;
+	//    previousElementSibling || bb.previousSibling;
+	
+		window.onload=function () {
+			
+			var a=document.getElementsByTagName("a")[0];
+			console.log(a);
+			
+			var a2=a.parentNode.parentNode;
+			console.log(a2);
+			
+			var b=document.getElementById("box");
+			console.log(b);
+			
+			var bb=document.getElementById("as");
+			
+			var b1=bb.nextElementSibling || bb.nextSibling;
+//			var b1=bb.nextSibling;
+//会出现把空行当成一个节点
+			console.log(b1);
+			
+			var b2=bb.previousElementSibling || bb.previousSibling;
+			console.log(b2);
+			
+		}
+	</script>
+	</head>
+	<body>
+		<div id="box">
+			<button id="btn">按钮</button>
+			<div id="as">
+				<span>
+					<a>我是adc</a>
+				</span>
+			</div>
+			<p>木马</p>
+		</div>
+	</body>
+	
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/html">
+/*		
+ * //使用Array 构造函数
+			var arr1=new Array();//空数组
+			console.log(arr1);
+			var arr2=new Array(30);//长度为30的数组
+			console.log(arr2);
+			var arr3=new Array("笑","孙菲菲","sdd");//空数组
+			console.log(arr3);
+			*/
+			
+//使用数组字面量
+		/*	var a1=[];
+			console.log(a1);
+			var a2=[];
+			a2.length=20;
+			console.log(a2);
+			var a3=["ffff","fefef","ddw"];
+			console.log(a3);*/
+			
+		</script>
+	
+	<script id="数组遍历找偶数" type="text/html">
+		//遍历数组，找偶数
+		var numArr =['12','23','44','55','77','88'];
+		for(var i=0;i<numArr.length;i++){			
+			//console.log(numArr[i]);				
+		if(numArr[i] %2 ===0){
+			
+			console.log(numArr[i]);		
+		}
+		
+		}
+		
+		
+	</script>
+	
+	<script type="text/html">
+		var sa=[0,'炸群',0,'等等','大多数多',0];
+	    var newArr=[];
+	for(var i=0;i<sa.length;i++){
+		if(sa[i] !==0){
+			newArr[newArr.length]=sa[i];
+		}
+	}
+		console.log(newArr);
+		
+		
+		
+	</script>
+	
+	<script type="text/javascript">
+		var ad=[12,34,445,566,677,4543,35343543,345345345];
+		var max1=ad[0],min1=ad[0];
+		var maxop=0,minop=0;		
+		
+		for(var i=0;i<ad.length;i++){
+			if(ad[i]>max1){
+				max1=ad[i];
+				maxop=i;
+			}
+			if(ad[i]<min1){
+				min1=ad[i];
+				minop=i;
+			}
+			
+			
+		}
+		
+		console.log(max1);
+		console.log(min1);
+		console.log(maxop);
+		console.log(minop);
+	</script>
+	
+	</body>
+</html>

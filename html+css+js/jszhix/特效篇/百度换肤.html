@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			/*	去掉li的点*/
+			vertical-align: top;
+				
+			}
+			body{
+				background: url("../img/bg2.jpg") no-repeat;
+				
+				background-size: cover;
+			}
+			#box{
+				
+				background-color: rgba(255,255,255,.5);
+			}
+			#box ul{
+				display: flex;			
+			/*	flex弹性布局*/	
+			
+		/*	弹性盒对象元素中的各项周围留有空白：		*/   
+				justify-content: space-around;
+							
+              align-items: center;
+                
+                cursor: pointer;
+
+			}
+		#box ul li img{
+				width: 180px;
+				height: 120px;
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+	<body>
+		
+			<div id="box">
+			<ul>
+				<li id="li01"><img src="../img/tu/A0.jpg"  /></li>
+				<li id="li02"><img src="../img/tu/A1.jpg"  /></li>
+				<li id="li03"><img src="../img/tu/A2.jpg"  /></li>
+				<li id="li04"><img src="../img/tu/A3.jpg"  /></li>
+				<li id="li05"><img src="../img/tu/A4.jpg"  /></li>
+				
+			</ul>
+			
+		</div>
+		
+	</body>
+	<script type="text/html">
+	
+		window.onload=function () {
+			
+			var box=document.getElementById('box');			
+			var lis=document.getElementsByTagName('li');//标签名字
+			
+			for(var i=0;i<lis.length;i++){
+			//取出单独的li标签	
+				var s=lis[i];
+				console.log(s);
+		            s.index=i;
+		            
+				s.addEventListener('click',function  () {
+					document.body.style.background='url("../img/tu/A'+(this.index)+'.jpg") no-repeat';
+				})
+				
+			}
+			
+			
+			
+		}
+		
+		
+	</script>
+     <script>
+	
+		window.onload=function () {
+			
+			var box=document.getElementById('box');			
+			var lis=document.getElementsByTagName('li');//标签名字
+			
+			for(var i=0;i<lis.length;i++){
+	
+				var s=lis[i];
+				
+				(function(index){
+					s.addEventListener('click',function  () {
+					document.body.style.background='url("../img/tu/A'+index+'.jpg") no-repeat';
+			})
+				})(i)
+				
+				
+		          
+				
+			}
+			
+		}	
+			
+		
+		
+		
+	</script>
+
+
+</html>

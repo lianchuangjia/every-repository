@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#father{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="father">
+		<button id="btn">
+			按钮
+		</button>
+		</div>
+	<!--冒泡从里到外，捕获从外到里	-->
+	<!--	冒泡div-body-html-document-window-->
+	<!--	新的才有window-->
+		<script type="text/html">
+			var father=document.getElementById('father');
+			var btn=document.getElementById('btn');
+			
+			btn.addEventListener('click',function (e) {
+				
+				//阻止冒泡
+				if(e && e.stopPropagation()){//标准模式
+					e.stopPropagation();
+				}else{//ie模式
+					e.cancelBubble=true;
+				}
+				
+				
+				alert("按钮");
+				
+				
+				
+			});
+			father.addEventListener('click',function () {
+				alert("father");
+			});
+			document.addEventListener('click',function () {
+				alert("document");
+			});
+			
+		</script>
+	
+	<script type="text/javascript">
+		//捕获，默认为false 改变为true
+		
+		
+		var father=document.getElementById('father');
+		var btn=document.getElementById('btn');
+			
+			btn.addEventListener('click',function (e) {
+				alert("按钮");
+								
+			},true);
+			
+			
+			father.addEventListener('click',function () {
+				alert("father");
+			},true);
+			document.addEventListener('click',function () {
+				alert("document");
+			},true);
+		
+	</script>
+	
+	
+	</body>
+	
+</html>

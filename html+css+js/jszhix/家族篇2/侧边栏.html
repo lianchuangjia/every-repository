@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				border: none;
+				
+			}
+			#aside{
+				width: 150px;
+				position: absolute;
+				left: 0;
+				top: 150px;
+				
+			}
+			#aside img{
+				width: 100%;
+			}
+			p{
+				height: 50px;
+				text-align: center;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="aside">
+			<img src="../img/1c.jpg" />
+		</div>
+		<div>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			<p>学习</p><p>学习</p><p>学习</p><p>学习</p><p>学习</p>
+			
+		</div>
+	</body>
+	<script src="../myTool/myTool.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.addEventListener('load',function () {
+			//获取头部高度
+			var offseTop=myTool.$('aside').offsetTop;
+			
+			//监听滚动
+			var begin=0,end=0,timeID=null;
+			window.addEventListener('scroll',function () {
+				//先清除定时器
+				clearInterval(timeID);
+				
+				//获取滚动的高度
+			var scrollTopHeignt=myTool.scroll().top;
+			//停止的位置为滑动的值加上距离
+			end=offseTop+scrollTopHeignt;
+			//缓动动画	
+			timeID=setInterval(function () {
+				begin+=(end-begin)*0.2;
+				myTool.$('aside').style.top=begin+'px';
+				
+				if(Math.round(begin)===end){
+					clearInterval(timeID);
+				}
+				
+				
+			},20);
+			
+			
+				
+			});
+			
+			
+			
+			
+		});
+		
+		
+	</script>
+</html>

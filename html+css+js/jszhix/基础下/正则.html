@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script id="正则在js中的使用方法" type="text/html">
+	
+	/*		var ret = new RegExp('ad[a-z]{6}','i');			
+			var st='addasddd00';			
+			console.log(ret.test(st));
+			*/
+			
+			
+	/*
+	 * 
+	var srt =new RegExp('ab[a-z0-9-_]','i');
+	var s='abff0';
+	console.log(srt.test(s));
+			*/
+			
+			
+			
+	//字面量形式		
+			
+		/*	var reg=/ab[a-z]/i;		
+			var st2='add';			
+			console.log(reg.test(st2));
+			*/
+					
+			
+		/*	
+			var sa=/135[0-9]{4}/gi;
+			
+			var sad='1356q89a';
+			console.log(sa.test(sad));*/
+			
+			
+			
+		</script>
+		
+		<script id="正则的匹配" type="text/html">
+		//	匹配日期
+		/*
+			var dataStr ='2020-10-3';
+			var dataReg= /^\d{4}-\d{1,2}-\d{1,2}$/;
+			console.log(dataReg.test(dataStr));
+			*/
+//----------------------------------------------------------------------			
+		//匹配手机	
+		
+	/*	
+			var phoneStr= 14719794564;
+		//	^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$
+			var phoneReg= /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+			console.log(phoneReg.test(phoneStr));
+			
+			
+			*/
+			
+	
+//----------------------------------------------------------------------	
+		//each用写的正则方法去提取
+		
+		
+	/*	//exec() 提取  单提取
+		var qqStr="笑:2444455, 擦擦擦:434333,fff:2332553";
+		var qqReg =/\d+/g;
+		
+		*/
+		//单提取，只能提取一个，要三个得三次
+		/*var con=qqReg.exec(qqStr);
+		console.log(con[0]);
+			
+			var con=qqReg.exec(qqStr);
+		console.log(con[0]);
+			
+			var con=qqReg.exec(qqStr);
+		console.log(con[0]);
+			*/
+			
+		/*	//或者用循环
+			do{
+				var con=qqReg.exec(qqStr);
+				if(con){
+					console.log(con[0]);
+				}												
+			}while(con);
+			*/
+//----------------------------------------------------------------------			
+		//match()  提取多个
+		//match() 用内容去调用方法
+		
+		
+		var qqStr="笑:2444455, 擦擦擦:434333,fff:2332553";
+		var qqReg =/\d+/g;
+		
+		var qqArr=qqStr.match(qqReg);
+		console.log(qqArr);
+		
+		
+		
+		
+			
+		</script>
+		
+		
+		<script id="提取" type="text/html">
+		//分组提取 即有() RegExp.$number;
+		    var dataStr ='2020-10-3';
+			var dataReg= /^(\d{4})-(\d{1,2})-(\d{1,2})$/;
+			if(dataReg.test(dataStr)){
+				console.log(RegExp.$1);
+				console.log(RegExp.$2);
+				console.log(RegExp.$3);
+			}
+			
+			
+			
+		</script>
+	
+	
+	<script id="替换" type="text/html">
+		//替换 replace()
+		/*var sa='    csaiaa fnaf feff fffff     ';
+		console.log(sa);	*/
+	//trim() 只能去掉开头结尾的空格	
+	//	console.log(sa.trim());
+//	var a1=sa.replace(/^\s*/,'*');
+//	console.log(a1);	
+//	var a1=sa.replace(/\s*$/,'*');
+//	console.log(a1);	
+	
+	
+		//分割 split
+	/*	var sd='2020-33-44';
+		console.log(sd.split('-'));
+		*/
+		
+		
+		
+		
+		
+	</script>
+	
+	
+	<script id="贪婪" type="text/javascript">
+		//默认贪婪模式
+		//a.即a开头
+		
+		
+		//贪婪
+	//	var af='aaaaaabbbbbbaaaaa';
+	//	var s=af.match(/a.*b/);
+	//	console.log(s[0]);
+		
+		//非贪婪
+		var af='aaaaaabbbbbbaaaaa';
+		var s=af.match(/a.*?b/);
+		console.log(s[0]);
+		
+		
+		
+	</script>
+	
+	
+	
+	</body>
+</html>

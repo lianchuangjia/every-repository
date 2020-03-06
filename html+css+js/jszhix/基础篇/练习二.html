@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>石头剪刀布</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var palyer ,comper;
+		//电脑	
+			comper =parseInt(Math.random()*3);	
+		
+			console.log(comper);
+		//玩家	
+			palyer=parseInt(+(window.prompt("请出拳：0->石头，1->剪刀，2->布")));  
+			console.log(palyer);
+		//判断
+		if(palyer<0 || palyer>2){
+			alert("请重新出拳");
+			palyer=parseInt(+(window.prompt("请出拳：0->石头，1->剪刀，2->布")));  
+		}else{
+			if(
+				(palyer ===0 && comper ===2) ||
+				(palyer ===1 && comper ===0) ||
+				(palyer ===2 && comper ===1)
+				
+			){
+				
+				alert("恭喜你，赢了");
+				
+			}else if(
+				(palyer ===0 && comper ===1) ||
+				(palyer ===1 && comper ===2) ||
+				(palyer ===2 && comper ===0)
+			){
+				alert("很遗憾，输了");
+				
+			}else{
+				alert("平局");
+			}
+			
+		}
+		
+		
+		</script>
+	</body>
+</html>
